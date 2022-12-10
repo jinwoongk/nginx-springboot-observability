@@ -1,0 +1,1 @@
+while true; do curl http://nginx/vets.html; sleep 5s; done
