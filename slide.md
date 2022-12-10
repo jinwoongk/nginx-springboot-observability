@@ -458,7 +458,7 @@ _class:
 
 ## Demo Applications
 
-- https://github.com/ddiiwoong/hello-observability
+- https://github.com/jinwoongk/nginx-springboot-observability/
 
 ![width:850px center](./images/demo.png)
 
@@ -498,11 +498,11 @@ server accepts handled requests
  15 15 210 
 Reading: 0 Writing: 1 Waiting: 1 
 ```
-Nginx Plus -http://nginx/api nginx plus metrics 확인
+<!-- Nginx Plus -http://nginx/api nginx plus metrics 확인
 
 ```
 metrics 정보
-```
+``` -->
 
 ## Demo - Nginx Exporter
 
@@ -536,10 +536,9 @@ Exporter, Client Library 형태로 메트릭 수집
 * https://github.com/prometheus/jmx_exporter
 * https://github.com/prometheus/client_java
 
-SLF4J 와 유사한 방법으로 Micrometer 를 사용합니다.
+SLF4J 와 유사한 방법으로 Micrometer 를 사용
 
-#### Micrometer -> 링크 확인 
-
+- https://micrometer.io/
 
 ## Java Dependencies (Maven)
 
@@ -671,7 +670,12 @@ Scrape Static Targets
 
 ## Visualization
 
-Grafana Dashboard
+**Grafana Dashboard**
+
+NGINX - https://grafana.com/grafana/dashboards/12708-nginx/
+JVM - https://grafana.com/grafana/dashboards/4701-jvm-micrometer/
+
+
 
 
 
@@ -691,6 +695,7 @@ Tempo Tracing
 - https://github.com/nginxinc/nginx-prometheus-exporter
 - https://github.com/ddiiwoong/nginx-hello-stub
 - https://github.com/adamquan/hello-observability
+- https://github.com/observabilitystack/o11y-workshop
 
 
 # Summary
