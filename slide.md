@@ -467,42 +467,31 @@ _class:
 ## Demo - Nginx Configuration
 
 ```properties
-upstream app {
-    server hello-observability:8080;
-}
-
-server {
-    listen 80 default_server;
-    server_name _;
-
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log notice;
-    expires -1;
-
-    location /stub_status {
-        stub_status on;
+http {
+    upstream backend {
+        zone name 10m;
+        server hello-observability:8080;
     }
-
-    location / { 
-        proxy_pass http://app;	
-    }
+    server {
+        listen 80 default_server;
+        server_name _;
+...
+        location /stub_status {
+            stub_status on;
+        }
+        location /api {
+            api write=on;
+        }
+        location / { 
+            proxy_pass http://backend;
+        }
+...
 ```
 
 ## Demo - Nginx stub_status
 
-Nginx OSS - http://nginx/stub_status 에서 metrics 확인
-
-```
-Active connections: 2 
-server accepts handled requests
- 15 15 210 
-Reading: 0 Writing: 1 Waiting: 1 
-```
-<!-- Nginx Plus -http://nginx/api nginx plus metrics 확인
-
-```
-metrics 정보
-``` -->
+Nginx OSS - http://nginx/stub_status
+Nginx Plus -http://nginx/api
 
 ## Demo - Nginx Exporter
 
@@ -527,6 +516,25 @@ nginx_connections_waiting 0
 # HELP nginx_connections_writing Connections where NGINX is writing the response back to the client
 # TYPE nginx_connections_writing gauge
 nginx_connections_writing 1
+```
+
+## Demo - Nginx Plus Exporter
+
+http://nginx-exporter:9113/metrics 에서 nginx plus metrics 확인
+
+```properties
+# HELP nginxplus_connections_accepted Accepted client connections
+# TYPE nginxplus_connections_accepted counter
+nginxplus_connections_accepted 88
+# HELP nginxplus_connections_active Active client connections
+# TYPE nginxplus_connections_active gauge
+nginxplus_connections_active 1
+# HELP nginxplus_http_requests_current Current http requests
+# TYPE nginxplus_http_requests_current gauge
+nginxplus_http_requests_current 1
+# HELP nginxplus_http_requests_total Total http requests
+# TYPE nginxplus_http_requests_total counter
+nginxplus_http_requests_total 539
 ```
 
 ## Java Metrics
@@ -629,7 +637,7 @@ private Attributes atttributes(String id) {
 
 http://hello-observability:8080/actuator/prometheus 에서 JVM metrics 확인
 
-```properties
+```
 ...
 # HELP jvm_memory_usage_after_gc_percent The percentage of long-lived heap pool used after the last GC event, in the range [0..1]
 # TYPE jvm_memory_usage_after_gc_percent gauge
@@ -673,10 +681,8 @@ Scrape Static Targets
 **Grafana Dashboard**
 
 NGINX - https://grafana.com/grafana/dashboards/12708-nginx/
+NGNIX Plus - https://grafana.com/grafana/dashboards/12930-nginx/
 JVM - https://grafana.com/grafana/dashboards/4701-jvm-micrometer/
-
-
-
 
 
 ## Tracing

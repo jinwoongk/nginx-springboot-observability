@@ -14,7 +14,7 @@ services:
     # NGINX OSS metrics
     environment:
       - SCRAPE_URI=http://nginx/stub_status
-    ## NGINX Plus metrics
+    # # NGINX Plus metrics
     # command: [ 
     #   "-nginx.plus",
     #   "-nginx.scrape-uri=http://nginx/api" 
@@ -156,3 +156,7 @@ services:
     depends_on:
       - loki
       - tempo
+
+networks:
+  default:
+    name: observability
