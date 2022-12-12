@@ -720,18 +720,19 @@ _class:
 
 ## Good Observability (Technical)
 
-#### **시스템의 상태를 표현하는 좋은 데이터를 수집, 처리, 알림, 원인분석하는 것**
+#### **Good data can help with the cultural shift to new systems**
 
 - Improved debugging and troubleshooting
+- Reducing MTTD and MTTR
 - Designs validated with data
 - Reduced defects; more issues caught proactively
 - Improved feature velocity
 
+<!-- _footer: "출처 : AWS Observability Workshop" -->
+
 ## Good Observability (Cultural)
 
 #### **Good data can help with the cultural shift to new systems**
-
-좋은 데이터는 새로운 시스템에 문화적인 변화와 함께 도움을 줄 수 있다. 
 
 - Builds transparency across teams
 - Shared understanding of complex components
@@ -740,6 +741,7 @@ _class:
 - Blameless culture
 - Context not control 
 
+<!-- _footer: "출처 : AWS Observability Workshop" -->
 
 # Thank You
 <!--

@@ -2,8 +2,8 @@ version: "3"
 services:
 
   nginx:
-    image: "nginx:demo"
-    # image: "nginxplus"
+    # image: "nginx:demo"
+    image: "nginxplus"
     ports:
       - "80:80"
     depends_on:
@@ -11,8 +11,14 @@ services:
 
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:0.11.0
+    # NGINX OSS metrics
     environment:
       - SCRAPE_URI=http://nginx/stub_status
+    ## NGINX Plus metrics
+    # command: [ 
+    #   "-nginx.plus",
+    #   "-nginx.scrape-uri=http://nginx/api" 
+    # ]
     ports:
       - "9113:9113"
     depends_on:

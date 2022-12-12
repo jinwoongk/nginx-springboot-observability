@@ -8,6 +8,9 @@
 *.war
 *.ear
 
+#logs
+**/*.log
+
 #Gradle temporary files
 target/
 
@@ -28,3 +31,7 @@ hs_err_pid*
 #nginx plus license
 nginx-repo.*
 Dockerfile.plus
+
+#observabilty export file
+observability.pdf
+
