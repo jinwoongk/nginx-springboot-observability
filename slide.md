@@ -60,12 +60,12 @@ _class:
 ### **Observability(관측가능성, 관찰가능성)**
 - 왜 정상적으로 동작하지 않는지?
 
-* 도구(tools)들을 통해 시스템과 애플리케이션에서 발생하는 문제를 파악하는 것  
+- 도구(tools)들을 통해 시스템과 애플리케이션에서 발생하는 문제를 파악하는 것  
 
-* 원격측정(Telemetry) Data
-  * Logs: 타임스탬프 메세지로 나타내는 시스템 이벤트, 상태
-  * Metrics : 키-밸류 태그를 가지는 집계/통계 데이터 (Gauge, Counter, Histogram 등)
-  * Traces : 개별 Request가 전체 시스템에 전파(propagate)될 때 경로에 대한 기록  
+- 원격측정(Telemetry) Data
+  - Logs: 타임스탬프 메세지로 나타내는 시스템 이벤트, 상태
+  - Metrics : 키-밸류 태그를 가지는 집계/통계 데이터 (Gauge, Counter, Histogram 등)
+  - Traces : 개별 Request가 전체 시스템에 전파(propagate)될 때 경로에 대한 기록  
 
 - 관찰가능성은 예측 불가능한 모든 장애 가능성을 알 수 없다는 것을 전제로 함
   예) 데이터베이스에 관련된 인프라 홉과 같은 요청 경로를 추적하고 특정 사용자 및 요청에 대해 데이터베이스 쿼리가 실행된 수준까지 파악하는 것
@@ -354,11 +354,11 @@ _class:
 
 ## Distributed Trace (분산 추적)
 
-* 시스템의 프로세스에서 특정 부분의 지연(latency)을 알려주는 원격 측정(telemetry)방법
+- 시스템의 프로세스에서 특정 부분의 지연(latency)을 알려주는 원격 측정(telemetry)방법
 
-* 요청(Requests)이 마이크로서비스 및 서버리스 아키텍처를 통해 전파될때 이동하는 경로를 기록
+- 요청(Requests)이 마이크로서비스 및 서버리스 아키텍처를 통해 전파될때 이동하는 경로를 기록
 
-* 마이크로서비스 환경같은 최신 아키텍처에서 수많은 구성 요소간의 종속성과 관계를 측정하고 지연 병목을 찾아내는 도구이기 때문에 Observability에서 매우 중요
+- 마이크로서비스 환경같은 최신 아키텍처에서 수많은 구성 요소간의 종속성과 관계를 측정하고 지연 병목을 찾아내는 도구이기 때문에 Observability에서 매우 중요
 
 ## What is OpenTelemetry?
 
@@ -408,15 +408,15 @@ span context 이외에도 뒤에서 설명할 trace와 span의 parent 식별자(
 ![width:950px center](./images/span.png)
 
 ## Spans
-  * Name, Timestamp (start, finish) 
-  * Attributes : 자유롭게 추가가능한 키-밸류 (Customer ID, Version, Host ID 등)
-  * Events : 타임스탬프 문자열(String) 형태의 tuple (name, timestamp, attributes)
-  * Links : Span의 인과 관계 
-  * SpanContext : Span이 참조하는데 필요한 정보
-    * TraceId : Worldwide 식별자 (16 bytes array identifier) 
-    * SpanId(ParendId) : Globally in a service (8 bytes array identifier)
-    * TraceFlags : Optional, Sampling bit (1 byte(8 bit), but only 1 bit used) 
-    * Tracestate : Optional 키-밸류 (예, 벤더 식별 정보)
+  - Name, Timestamp (start, finish) 
+  - Attributes : 자유롭게 추가가능한 키-밸류 (Customer ID, Version, Host ID 등)
+  - Events : 타임스탬프 문자열(String) 형태의 tuple (name, timestamp, attributes)
+  - Links : Span의 인과 관계 
+  - SpanContext : Span이 참조하는데 필요한 정보
+    - TraceId : Worldwide 식별자 (16 bytes array identifier) 
+    - SpanId(ParendId) : Globally in a service (8 bytes array identifier)
+    - TraceFlags : Optional, Sampling bit (1 byte(8 bit), but only 1 bit used) 
+    - Tracestate : Optional 키-밸류 (예, 벤더 식별 정보)
 
 ## W3C Trace Context
 #### Trace Context :https://w3c.github.io/trace-context/
@@ -541,8 +541,8 @@ nginxplus_http_requests_total 539
 
 Exporter, Client Library 형태로 메트릭 수집
 
-* https://github.com/prometheus/jmx_exporter
-* https://github.com/prometheus/client_java
+- https://github.com/prometheus/jmx_exporter
+- https://github.com/prometheus/client_java
 
 SLF4J 와 유사한 방법으로 Micrometer 를 사용
 
