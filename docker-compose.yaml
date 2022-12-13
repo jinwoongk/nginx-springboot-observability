@@ -2,8 +2,8 @@ version: "3"
 services:
 
   nginx:
-    # image: "nginx:demo"
-    image: "nginxplus"
+    image: "nginx:demo"
+    # image: "nginxplus"
     ports:
       - "80:80"
     depends_on:

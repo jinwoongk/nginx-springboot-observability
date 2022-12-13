@@ -491,7 +491,7 @@ http {
 ## Demo - Nginx stub_status
 
 Nginx OSS - http://nginx/stub_status
-Nginx Plus -http://nginx/api
+<!-- Nginx Plus -http://nginx/api -->
 
 ## Demo - Nginx Exporter
 
@@ -517,7 +517,7 @@ nginx_connections_waiting 0
 # TYPE nginx_connections_writing gauge
 nginx_connections_writing 1
 ```
-
+<!-- 
 ## Demo - Nginx Plus Exporter
 
 http://nginx-exporter:9113/metrics 에서 nginx plus metrics 확인
@@ -534,7 +534,7 @@ nginxplus_connections_active 1
 nginxplus_http_requests_current 1
 # HELP nginxplus_http_requests_total Total http requests
 # TYPE nginxplus_http_requests_total counter
-nginxplus_http_requests_total 539
+nginxplus_http_requests_total 539 -->
 ```
 
 ## Java Metrics
@@ -681,7 +681,7 @@ Scrape Static Targets
 **Grafana Dashboard**
 
 NGINX - https://grafana.com/grafana/dashboards/12708-nginx/
-NGNIX Plus - https://grafana.com/grafana/dashboards/12930-nginx/
+<!-- NGNIX Plus - https://grafana.com/grafana/dashboards/12930-nginx/ -->
 JVM - https://grafana.com/grafana/dashboards/4701-jvm-micrometer/
 
 
